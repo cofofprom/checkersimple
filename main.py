@@ -21,7 +21,7 @@ class Resp(http.server.BaseHTTPRequestHandler):
         pfile.close()
         outfile = open("result.txt", "w")
         #outfile.close()
-        subprocess.run("python3 --version", stdout=outfile)
+        subprocess.run("python tt.py", stdout=outfile)
         outfile.close()
         infile = open("result.txt", "r")
         self.wfile.write(infile.read(1024))
