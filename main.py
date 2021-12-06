@@ -13,6 +13,7 @@ class Resp(http.server.BaseHTTPRequestHandler):
         self.wfile.write("{'hello!'}".encode("utf-8"))
 
 server_address = ("", int(sys.argv[1]))
+print(server_address)
 h = http.server.HTTPServer(server_address, Resp)
 h.serve_forever()
 
