@@ -1,5 +1,6 @@
 import subprocess
 import http.server
+import sys
 
 class Resp(http.server.BaseHTTPRequestHandler):
     def _set_response(self):
@@ -11,7 +12,7 @@ class Resp(http.server.BaseHTTPRequestHandler):
         self._set_response()
         self.wfile.write("{'hello!'}".encode("utf-8"))
 
-server_address = ("", 8080)
+server_address = ("", int(sys.argv[1]))
 h = http.server.HTTPServer(server_address, Resp)
 h.serve_forever()
 
